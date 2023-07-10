@@ -53,14 +53,15 @@
                 var brickRowCount = 3;
                 var brickColumnCount = 5;
                 var brickWidth = 150;
-                var brickHeight = 90;
-                var brickPadding = 20;
+                var brickHeight = 70;
+                var brickPadding = 30;
                 var brickOffsetTop = 60;
                 var brickOffsetLeft = 60;
                 var score = 0;
-                let timer = setInterval(function(){
+				let timer = setInterval(function(){
 					gameSeconds++;
 				}, 1000);
+				let gameSeconds = 0;
                 var bricks = [];
                 for (var c = 0; c < brickColumnCount; c++) {
                     bricks[c] = [];
@@ -147,8 +148,8 @@
                                     if (score == brickRowCount * brickColumnCount) {
                                         new Audio(gameWonSound).play();
                                         drawMessage("YOU BROKE NONCE38, CONGRATULATIONS!!!");
-                                        drawMessage2("Thx to Gackibear for audio");
-                                        clearInterval(timer);
+										drawMessage2("Thx to Gackibear for audio");
+										clearInterval(timer);
 										clearInterval(interval);
                                         return;
                                     }
@@ -167,8 +168,7 @@
                     ctx.textAlign = "center";
                     ctx.fillText(message, canvas.width / 2, canvas.height / 2);
                 }
-                
-                function drawMessage2(message) {
+				function drawMessage2(message) {
                     clearInterval(interval);
                     ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -183,10 +183,10 @@
                     drawBricks();
                     drawBall();
                     drawPaddle();
-                    collisionDetection();
                     ctx.font = "20px Arial";
-                    ctx.fillStyle = "#0095DD";
-                    ctx.fillText("Time: "+gameSeconds, canvas.width-100, 20);
+					ctx.fillStyle = "#0095DD";
+					ctx.fillText("Time: "+gameSeconds, canvas.width-100, 20);
+					collisionDetection();
                     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                         dx = -dx;
                     }
