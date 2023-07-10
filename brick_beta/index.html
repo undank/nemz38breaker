@@ -253,8 +253,8 @@
                         } else {
                             new Audio(gameOverSound).play();
                             drawMessage("GAME OVER");
-							document.getElementById('startButton').style.display = 'block';
-							document.getElementById('startButton').innerText = "Restart";
+			    document.getElementById('startButton').style.display = 'block';
+			    document.getElementById('startButton').innerText = "Restart";
                             return;
                         }
                     }
@@ -268,11 +268,11 @@
                     x += dx;
                     y += dy;
                 }
-				function drawBeta() {
-					ctx.font = "16px Arial";
-					ctx.fillStyle = "#0095DD";
-					ctx.fillText("BETA v0.3", 8, 20);
-				}
+		function drawBeta() {
+			ctx.font = "16px Arial";
+			ctx.fillStyle = "#0095DD";
+			ctx.fillText("BETA v0.3", 8, 20);
+		}
 
                 var interval = setInterval(draw, 10);
             }
