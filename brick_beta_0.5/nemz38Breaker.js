@@ -118,8 +118,8 @@ function startGame() {
     let totalBricks;
 function initializeBricks() {
     if (level === 1) {
-        brickRowCount = 1;
-        brickColumnCount = 1;
+        brickRowCount = 3;
+        brickColumnCount = 5;
         totalBricks = brickRowCount * brickColumnCount; // Total bricks for level 1
     } else if (level === 2) {
         brickRowCount = 3; // Change the rows and columns as you like for level 2
