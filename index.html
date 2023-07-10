@@ -144,6 +144,7 @@
                                     if (score == brickRowCount * brickColumnCount) {
                                         new Audio(gameWonSound).play();
                                         drawMessage("YOU BROKE NONCE38, CONGRATULATIONS!!!");
+                                        drawMessage2("Thx to Gackibear for audio");
                                         return;
                                     }
                                 }
@@ -160,6 +161,16 @@
                     ctx.fillStyle = "white";
                     ctx.textAlign = "center";
                     ctx.fillText(message, canvas.width / 2, canvas.height / 2);
+                }
+                
+                function drawMessage2(message) {
+                    clearInterval(interval);
+                    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.font = "30px Arial";
+                    ctx.fillStyle = "white";
+                    ctx.textAlign = "center";
+                    ctx.fillText(message, canvas.width / 2, canvas.height / 2 + 150);
                 }
 
                 function draw() {
