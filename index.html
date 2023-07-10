@@ -58,6 +58,9 @@
                 var brickOffsetTop = 60;
                 var brickOffsetLeft = 60;
                 var score = 0;
+                let timer = setInterval(function(){
+					gameSeconds++;
+				}, 1000);
                 var bricks = [];
                 for (var c = 0; c < brickColumnCount; c++) {
                     bricks[c] = [];
@@ -145,6 +148,8 @@
                                         new Audio(gameWonSound).play();
                                         drawMessage("YOU BROKE NONCE38, CONGRATULATIONS!!!");
                                         drawMessage2("Thx to Gackibear for audio");
+                                        clearInterval(timer);
+										clearInterval(interval);
                                         return;
                                     }
                                 }
@@ -179,6 +184,9 @@
                     drawBall();
                     drawPaddle();
                     collisionDetection();
+                    ctx.font = "20px Arial";
+                    ctx.fillStyle = "#0095DD";
+                    ctx.fillText("Time: "+gameSeconds, canvas.width-100, 20);
                     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                         dx = -dx;
                     }
