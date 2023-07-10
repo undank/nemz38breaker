@@ -32,6 +32,15 @@
         <script>
             document.getElementById('startButton').addEventListener('click', startGame);
 		let isMuted = false;
+		function playSound(src) {
+					if (!isMuted) {
+						new Audio(src).play();
+					}
+				}
+				document.getElementById('muteButton').addEventListener('click', function() {
+					isMuted = !isMuted;
+					this.textContent = isMuted ? 'Unmute' : 'Mute';
+				});
             function startGame() {
                 document.getElementById('startButton').style.display = 'none';
                 document.getElementById('title').style.display = 'none';
@@ -233,17 +242,7 @@
 					ctx.fillStyle = "#0095DD";
 					ctx.fillText("BETA v0.4", 8, 20);
 				}
-				function playSound(src) {
-					if (!isMuted) {
-						new Audio(src).play();
-					}
-				}
-
-				document.getElementById('muteButton').addEventListener('click', function() {
-					isMuted = !isMuted;
-					this.textContent = isMuted ? 'Unmute' : 'Mute';
-				});
-				
+								
                 var interval = setInterval(draw, 10);
             }
         </script>
