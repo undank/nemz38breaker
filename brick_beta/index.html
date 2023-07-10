@@ -230,9 +230,11 @@
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     drawBricks();
                     drawBall();
+					drawBeta();
                     drawPaddle();
                     ctx.font = "20px Arial";
 					ctx.fillStyle = "#0095DD";
+					ctx.fillText("BETA 0.1", canvas.width+100, 20);
 					ctx.fillText("Time: "+gameSeconds, canvas.width-100, 20);
 					collisionDetection();
                     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
@@ -266,6 +268,11 @@
                     x += dx;
                     y += dy;
                 }
+				function drawBeta() {
+					ctx.font = "16px Arial";
+					ctx.fillStyle = "#0095DD";
+					ctx.fillText("BETA v0.3", 8, 20);
+				}
 
                 var interval = setInterval(draw, 10);
             }
