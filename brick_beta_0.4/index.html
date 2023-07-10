@@ -31,7 +31,7 @@
 		<button id="muteButton" style="position: absolute; right: 10px; top: 10px;">Mute</button>
         <script>
             document.getElementById('startButton').addEventListener('click', startGame);
-
+		let isMuted = false;
             function startGame() {
                 document.getElementById('startButton').style.display = 'none';
                 document.getElementById('title').style.display = 'none';
@@ -243,7 +243,7 @@
 					isMuted = !isMuted;
 					this.textContent = isMuted ? 'Unmute' : 'Mute';
 				});
-				let isMuted = false;
+				
                 var interval = setInterval(draw, 10);
             }
         </script>
