@@ -44,7 +44,7 @@
                 var dx = 4;
                 var dy = -4;
                 var speed = Math.sqrt(dx * dx + dy * dy);
-                var ballRadius = 20;
+                var ballRadius = 12;
                 var paddleHeight = 20;
                 var paddleWidth = 150;
                 var paddleX = (canvas.width - paddleWidth) / 2;
@@ -251,6 +251,8 @@
                         } else {
                             new Audio(gameOverSound).play();
                             drawMessage("GAME OVER");
+							document.getElementById('startButton').style.display = 'block';
+							document.getElementById('startButton').innerText = "Restart";
                             return;
                         }
                     }
