@@ -147,10 +147,10 @@
                                     new Audio(brickBreakSounds[randomSoundIndex]).play();
                                     if (score == brickRowCount * brickColumnCount) {
                                         new Audio(gameWonSound).play();
-                                        drawMessage("YOU BROKE NONCE38, CONGRATULATIONS!!!");
-										drawMessage2("Thx to Gackibear for audio");
-										clearInterval(timer);
-										clearInterval(interval);
+                                        drawMessage2("Thx to Gackibear for audio");
+					drawMessage("YOU BROKE NONCE38, CONGRATULATIONS!!!");
+					clearInterval(timer);
+					clearInterval(interval);
                                         return;
                                     }
                                 }
