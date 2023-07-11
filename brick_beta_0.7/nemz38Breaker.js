@@ -117,6 +117,24 @@ function startGame() {
 		leftPressed = false;
 		e.preventDefault();
 	}, false);
+	
+	// This function will calculate mouse position
+	function getMousePos(canvas, evt) {
+		var rect = canvas.getBoundingClientRect();
+		return {
+			x: evt.clientX - rect.left,
+			y: evt.clientY - rect.top
+		};
+	}
+
+	// Event listener for mouse move
+	canvas.addEventListener('mousemove', function(e) {
+		var mousePos = getMousePos(canvas, e);
+		paddleX = mousePos.x - paddleWidth / 2; // Adjust the paddle's X position
+		// Check for out-of-bound movements
+		if (paddleX < 0) paddleX = 0;
+		if (paddleX + paddleWidth > canvas.width) paddleX = canvas.width - paddleWidth;
+	}, false);
 
 	function drawBall() {
 		ctx.beginPath();
