@@ -67,6 +67,8 @@ function startGame() {
     brickImage2.src = 'brickImage2.jpg';
     var brickImage3 = new Image();
     brickImage3.src = 'brickImage3.jpg';
+	var brickImage4 = new Image();
+    brickImage4.src = 'brickImage4.jpg';
 
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
@@ -176,8 +178,12 @@ function startGame() {
                         img = brickImage;
                     } else if (level === 2) {
                         img = brickImage2;
-                    } else { // level 3 and onwards
+                    } else if (level === 3) {
                         img = brickImage3;
+                    } else if (level === 4) {
+                        img = brickImage4;
+                    } else { // level 4 and onwards
+                        img = brickImage4;
                     }
                     ctx.drawImage(img, brickX, brickY, brickWidth, brickHeight);
                     ctx.closePath();
@@ -200,7 +206,7 @@ function startGame() {
 			totalBricks = Math.ceil(brickRowCount * brickColumnCount / 2);
 		} else if (level === 3) {
 			brickRowCount = 3;
-			brickColumnCount = 4;
+			brickColumnCount = 5;
 			totalBricks = Math.ceil(brickRowCount * brickColumnCount / 2 - 1);
 		} else if (level === 4) {
 			brickRowCount = 3;
@@ -259,8 +265,8 @@ function startGame() {
                                     paddleX = (canvas.width - paddleWidth) / 2;
                                 } else {
                                     new Audio(gameWonSound).play();
-                                    drawMessage("YOU BROKE NONCE38, CONGRATULATIONS!!!");
                                     drawMessage2("Thx to Gackibear for audio");
+									drawMessage("YOU BROKE NONCE38, CONGRATULATIONS!!!");
                                     clearInterval(timer);
                                     clearInterval(interval);
                                     return;
