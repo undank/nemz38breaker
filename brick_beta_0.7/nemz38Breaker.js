@@ -190,37 +190,43 @@ function startGame() {
     let totalBricks;
 
     function initializeBricks() {
-        if (level === 1) {
-            brickRowCount = 3;
-            brickColumnCount = 5;
-            totalBricks = brickRowCount * brickColumnCount;
-        } else if (level === 2) {
-            brickRowCount = 3;
-            brickColumnCount = 5;
-            totalBricks = Math.ceil(brickRowCount * brickColumnCount / 2);
-        } else if (level === 3) {
-            brickRowCount = 3;
-            brickColumnCount = 5;
-            totalBricks = Math.ceil(brickRowCount * brickColumnCount / 2 - 1);
-        } 
-        bricks = [];
-        for (var c = 0; c < brickColumnCount; c++) {
-            bricks[c] = [];
-            for (var r = 0; r < brickRowCount; r++) {
-                var status = 1;
-                if (level === 2 && (c + r) % 2 == 1) {
-                    status = 0;
-                } else if (level === 3 && (c + r) % 2 == 0) {
-                    status = 0;
-                } 
-                bricks[c][r] = {
-                    x: 0,
-                    y: 0,
-                    status: status
-                };
-            }
-        }
-    }
+		if (level === 1) {
+			brickRowCount = 3;
+			brickColumnCount = 5;
+			totalBricks = brickRowCount * brickColumnCount;
+		} else if (level === 2) {
+			brickRowCount = 3;
+			brickColumnCount = 5;
+			totalBricks = Math.ceil(brickRowCount * brickColumnCount / 2);
+		} else if (level === 3) {
+			brickRowCount = 3;
+			brickColumnCount = 4;
+			totalBricks = Math.ceil(brickRowCount * brickColumnCount / 2 - 1);
+		} else if (level === 4) {
+			brickRowCount = 3;
+			brickColumnCount = 5;
+			totalBricks = Math.ceil(9);
+		} 
+		bricks = [];
+		for (var c = 0; c < brickColumnCount; c++) {
+			bricks[c] = [];
+			for (var r = 0; r < brickRowCount; r++) {
+				var status = 1;
+				if (level === 2 && (c + r) % 2 == 1) {
+					status = 0;
+				} else if (level === 3 && (c + r) % 2 == 0) {
+					status = 0;
+				} else if (level === 4 && c % 2 != 0) {
+					status = 0;
+				} 
+				bricks[c][r] = {
+					x: 0,
+					y: 0,
+					status: status
+				};
+			}
+		}
+	}
 
     initializeBricks();
 
@@ -242,7 +248,7 @@ function startGame() {
                         playSound(brickBreakSounds[randomSoundIndex]);
                         if (score == totalBricks) { // Check the score against the totalBricks variable instead
                             if (score == totalBricks) {
-                                if (level < 3) { // Check if the current level is less than the total number of levels
+                                if (level < 4) { // Check if the current level is less than the total number of levels
                                     level++;
                                     score = 0;
                                     initializeBricks();
