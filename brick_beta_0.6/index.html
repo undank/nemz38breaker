@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nemz38 Breaker</title>
+        <style>
+            #myCanvas {
+                border: 2px solid black;
+                display: none;
+            }
+
+            #startButton, #muteButton {
+                position: absolute;
+                padding: 20px;
+                font-size: 24px;
+            }
+
+            #startButton {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            #muteButton {
+                top: 10px;
+                right: 10px;
+            }
+
+            #title {
+                text-align: center;
+                font-size: 48px;
+                margin-top: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Nemz38 Breaker</h1>
+        <button id="startButton">Start Game</button>
+        <canvas id="myCanvas" width="960" height="640"></canvas>
+		<button id="muteButton">Mute</button>
+        <script src="nemz38Breaker.js"></script>
+    </body>
+</html>
