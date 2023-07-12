@@ -321,7 +321,7 @@ function startGame() {
             (seconds < 10 ? '0' + seconds : seconds) + "." +
             (milliseconds < 10 ? '0' + milliseconds : milliseconds), canvas.width - 150, 20);
         ctx.fillText("LEVEL " + level, canvas.width - 150, 40);
-        ctx.fillText("BETA v0.7", canvas.width - 150, 60);
+        //ctx.fillText("BETA v0.7", canvas.width - 150, 60);
         collisionDetection();
         if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
             dx = -dx;
