@@ -58,7 +58,7 @@ function startGame() {
     }
 
     var brickBreakSounds = ['brickBreak1.mp3', 'brickBreak2.mp3', 'brickBreak3.mp3', 'brickBreak4.mp3',
-        'brickBreak5.mp3', 'brickBreak6.mp3', 'brickBreak7.mp3', 'brickBreak8.mp3', 'brickBreak9.mp3', 'brickBreak10.mp3', 'brickBreak11.mp3', 'brickBreak12.mp3'
+        'brickBreak5.mp3', 'brickBreak6.mp3', 'brickBreak7.mp3', 'brickBreak8.mp3', 'brickBreak9.mp3', 'brickBreak11.mp3', 'brickBreak12.mp3'
     ];
     var gameWonSound = 'gameWon.mp3';
     var gameOverSound = 'gameOver.mp3';
